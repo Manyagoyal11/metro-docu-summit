@@ -2,41 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Government Design System - Kochi Metro Rail */
 
 @layer base {
   :root {
+    /* Government Color Palette */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 218 100% 20%;
+    
+    --gov-blue: 218 100% 20%;      /* #003399 */
+    --gov-orange: 22 100% 50%;     /* #ff6600 */
+    --gov-white: 0 0% 100%;        /* #ffffff */
+    
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --card-foreground: 218 100% 20%;
+    --card-shadow: 218 50% 15%;
+    
+    /* Interactive Elements */
+    --primary: 218 100% 20%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 218 100% 20%;
+    
+    --accent: 22 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 100% 20%), hsl(22 100% 50%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(218 5% 96%));
+    
+    /* Borders & Inputs */
+    --border: 218 15% 85%;
+    --input: 218 15% 90%;
+    --ring: 218 100% 20%;
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(218 50% 15% / 0.1), 0 2px 4px -2px hsl(218 50% 15% / 0.1);
+    --shadow-hover: 0 10px 15px -3px hsl(218 50% 15% / 0.15), 0 4px 6px -4px hsl(218 50% 15% / 0.1);
+    --shadow-glow: 0 0 20px hsl(22 100% 50% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +111,51 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .gov-card {
+    @apply bg-card text-card-foreground rounded-2xl border border-border shadow-[var(--shadow-card)] transition-[var(--transition-smooth)];
+  }
+  
+  .gov-card-hover {
+    @apply hover:shadow-[var(--shadow-hover)] hover:-translate-y-1;
+  }
+  
+  .nav-link {
+    @apply relative text-foreground hover:text-primary transition-[var(--transition-smooth)] 
+           after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-primary after:transition-[var(--transition-smooth)] hover:after:w-full;
+  }
+  
+  .gradient-button {
+    @apply bg-[var(--gradient-primary)] text-white font-medium px-8 py-3 rounded-xl 
+           transition-[var(--transition-bounce)] hover:scale-105 hover:shadow-[var(--shadow-glow)]
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .upload-zone {
+    @apply border-2 border-dashed border-border rounded-xl p-8 text-center
+           hover:border-primary hover:bg-secondary/50 transition-[var(--transition-smooth)]
+           cursor-pointer;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
