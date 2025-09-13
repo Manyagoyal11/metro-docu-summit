@@ -48,14 +48,14 @@ const Index = () => {
 The report recommends accelerated deployment of digital ticketing systems and expansion of feeder bus services to enhance connectivity. Budget allocation for next quarter focuses on station accessibility improvements and advanced signaling systems.`;
 
   return (
-    <div className="min-h-screen bg-[var(--gradient-subtle)]">
+    <div className="min-h-screen hero-bg relative">
       <Header />
       
       {/* Hero Section */}
-      <section className="py-16" id="home">
+      <section className="py-16 hero-content" id="home">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 flex items-center justify-center gap-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 flex items-center justify-center gap-4 title-hover cursor-default">
               <FileText className="h-12 w-12 text-accent" />
               AI-Powered Document Analysis
             </h1>
