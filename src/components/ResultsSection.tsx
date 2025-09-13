@@ -56,7 +56,7 @@ const ResultsSection = ({ documentTitle, summary, isVisible }: ResultsSectionPro
 
             <div className="mb-8">
               <h3 className="text-lg font-semibold text-foreground mb-4">Executive Summary</h3>
-              <div className="bg-secondary/30 rounded-lg p-6 border border-border">
+              <div className="summary-card max-h-80 overflow-y-auto">
                 <p className="text-foreground leading-relaxed whitespace-pre-wrap">
                   {summary}
                 </p>
@@ -66,8 +66,7 @@ const ResultsSection = ({ documentTitle, summary, isVisible }: ResultsSectionPro
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 onClick={handleCopy}
-                variant="outline"
-                className="flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="action-button-blue flex items-center gap-2"
               >
                 {copied ? <CheckCircle className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
                 {copied ? "Copied!" : "Copy Summary"}
@@ -75,7 +74,7 @@ const ResultsSection = ({ documentTitle, summary, isVisible }: ResultsSectionPro
               
               <Button
                 onClick={handleDownloadPDF}
-                className="flex items-center gap-2 bg-accent text-accent-foreground hover:bg-accent/90"
+                className="action-button-orange flex items-center gap-2"
               >
                 <Download className="h-4 w-4" />
                 Download PDF

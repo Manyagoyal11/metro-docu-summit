@@ -55,7 +55,8 @@ The report recommends accelerated deployment of digital ticketing systems and ex
       <section className="py-16" id="home">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 flex items-center justify-center gap-4">
+              <FileText className="h-12 w-12 text-accent" />
               AI-Powered Document Analysis
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

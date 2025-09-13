@@ -18,7 +18,7 @@ const EmailCard = ({ onEmailConnect }: EmailCardProps) => {
   };
 
   return (
-    <div className="gov-card gov-card-hover p-8">
+    <div className="gov-card email-card-hover p-8">
       <div className="text-center mb-6">
         <Mail className="mx-auto h-12 w-12 text-accent mb-4" />
         <h3 className="text-xl font-semibold text-foreground mb-2">Connect Email</h3>

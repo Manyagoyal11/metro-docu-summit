@@ -41,7 +41,9 @@
     /* Shadows */
     --shadow-card: 0 4px 6px -1px hsl(218 50% 15% / 0.1), 0 2px 4px -2px hsl(218 50% 15% / 0.1);
     --shadow-hover: 0 10px 15px -3px hsl(218 50% 15% / 0.15), 0 4px 6px -4px hsl(218 50% 15% / 0.1);
-    --shadow-glow: 0 0 20px hsl(22 100% 50% / 0.3);
+    --shadow-glow-blue: 0 0 25px hsl(218 100% 70% / 0.4), 0 0 50px hsl(218 100% 70% / 0.2);
+    --shadow-glow-orange: 0 0 25px hsl(22 100% 65% / 0.4), 0 0 50px hsl(22 100% 65% / 0.2);
+    --shadow-elegant: 0 20px 25px -5px hsl(218 50% 15% / 0.1), 0 10px 10px -5px hsl(218 50% 15% / 0.04);
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -124,6 +126,16 @@
     @apply hover:shadow-[var(--shadow-hover)] hover:-translate-y-1;
   }
   
+  .upload-card-hover {
+    @apply hover:border-primary hover:shadow-[var(--shadow-glow-blue)] hover:scale-[1.02] 
+           transition-[var(--transition-smooth)];
+  }
+  
+  .email-card-hover {
+    @apply hover:border-accent hover:shadow-[var(--shadow-glow-orange)] hover:scale-[1.02] 
+           transition-[var(--transition-smooth)];
+  }
+  
   .nav-link {
     @apply relative text-foreground hover:text-primary transition-[var(--transition-smooth)] 
            after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
@@ -132,8 +144,22 @@
   
   .gradient-button {
     @apply bg-[var(--gradient-primary)] text-white font-medium px-8 py-3 rounded-xl 
-           transition-[var(--transition-bounce)] hover:scale-105 hover:shadow-[var(--shadow-glow)]
+           transition-[var(--transition-bounce)] hover:scale-105 hover:shadow-[var(--shadow-glow-orange)]
            focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .summary-card {
+    @apply bg-slate-50 border-l-4 border-accent rounded-xl p-6 shadow-[var(--shadow-elegant)];
+  }
+  
+  .action-button-blue {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[var(--shadow-glow-blue)] 
+           hover:scale-105 transition-[var(--transition-bounce)] rounded-lg px-4 py-2;
+  }
+  
+  .action-button-orange {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 hover:shadow-[var(--shadow-glow-orange)] 
+           hover:scale-105 transition-[var(--transition-bounce)] rounded-lg px-4 py-2;
   }
   
   .upload-zone {

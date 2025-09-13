@@ -26,7 +26,7 @@ const UploadCard = ({ onFileSelect }: UploadCardProps) => {
   };
 
   return (
-    <div className="gov-card gov-card-hover p-8">
+    <div className="gov-card upload-card-hover p-8">
       <div className="text-center mb-6">
         <FileText className="mx-auto h-12 w-12 text-primary mb-4" />
         <h3 className="text-xl font-semibold text-foreground mb-2">Upload Documents</h3>
