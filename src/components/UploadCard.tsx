@@ -59,12 +59,12 @@ const UploadCard = ({ onFileSelect }: UploadCardProps) => {
           id="file-upload"
           type="file"
           className="hidden"
-          accept=".pdf,.doc,.docx,.txt"
+          accept=".pdf,.png,.jpg,.jpeg"
           onChange={handleFileChange}
         />
         
         <p className="text-xs text-muted-foreground mt-3">
-          Supported formats: PDF, DOC, DOCX, TXT
+          Supported formats: PNG, JPG, PDF
         </p>
       </div>
     </div>

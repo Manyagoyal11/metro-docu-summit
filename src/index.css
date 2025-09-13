@@ -129,12 +129,48 @@
   
   .upload-card-hover {
     @apply hover:border-primary hover:shadow-[var(--shadow-glow-blue)] hover:scale-[1.02] 
-           transition-[var(--transition-smooth)];
+           transition-[var(--transition-smooth)] relative;
+  }
+  
+  .upload-card-hover::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: radial-gradient(circle, hsl(218 100% 70% / 0.2) 0%, transparent 70%);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .upload-card-hover:hover::before {
+    opacity: 1;
   }
   
   .email-card-hover {
     @apply hover:border-accent hover:shadow-[var(--shadow-glow-orange)] hover:scale-[1.02] 
-           transition-[var(--transition-smooth)];
+           transition-[var(--transition-smooth)] relative;
+  }
+  
+  .email-card-hover::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: radial-gradient(circle, hsl(22 100% 65% / 0.2) 0%, transparent 70%);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .email-card-hover:hover::before {
+    opacity: 1;
   }
   
   .nav-link {
@@ -150,7 +186,7 @@
   }
   
   .summary-card {
-    @apply bg-slate-50 border-l-4 border-accent rounded-xl p-6 shadow-[var(--shadow-elegant)];
+    @apply bg-[#F7F9FC] border-l-4 border-accent rounded-xl p-6 shadow-[var(--shadow-elegant)];
   }
   
   .action-button-blue {

@@ -121,7 +121,9 @@ The report recommends accelerated deployment of digital ticketing systems and ex
         isVisible={showResults}
       />
 
-      <Footer />
+      <div className="relative z-2">
+        <Footer />
+      </div>
     </div>
   );
 };
