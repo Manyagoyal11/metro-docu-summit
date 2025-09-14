@@ -42,7 +42,7 @@ const ResultsSection = ({ documentTitle, summary, isVisible }: ResultsSectionPro
   if (!isVisible) return null;
 
   return (
-    <div className="fade-in slide-up">
+    <div className="fade-in slide-up summary-content">
       <div className="container mx-auto px-6 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="gov-card p-8">
